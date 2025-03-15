@@ -2,16 +2,27 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Suspense, useState, useRef, useEffect, lazy } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Center, OrbitControls } from '@react-three/drei';
+import { Center, OrbitControls, Html } from '@react-three/drei';
 
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
 // Lazy load the DemoComputer component
 const DemoComputer = lazy(() => import('../components/DemoComputer.jsx'));
 
+// Error boundary component
+const ErrorFallback = () => (
+  <div className="w-full h-full flex items-center justify-center bg-black-200 rounded-lg">
+    <div className="text-white p-4 text-center">
+      <p className="text-xl mb-2">Something went wrong</p>
+      <p>Could not load 3D content</p>
+    </div>
+  </div>
+);
+
 const ProjectCard = ({ project, index }) => {
   const projectRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasError, setHasError] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,6 +55,12 @@ const ProjectCard = ({ project, index }) => {
       );
     }
   }, [isVisible, index]);
+
+  // Error handler for Canvas
+  const handleCanvasError = (error) => {
+    console.error("Canvas error:", error);
+    setHasError(true);
+  };
 
   return (
     <div 
@@ -96,10 +113,16 @@ const ProjectCard = ({ project, index }) => {
       </div>
 
       <div className="border border-black-300 bg-black-200 rounded-lg h-96">
-        {isVisible && (
+        {isVisible && !hasError ? (
           <Canvas 
             dpr={[1, 2]} // Limit pixel ratio for better performance
             performance={{ min: 0.1 }} // Allow frame rate to drop for better performance
+            onError={handleCanvasError}
+            gl={{ 
+              powerPreference: "high-performance", 
+              antialias: false, // Disable antialiasing for better performance
+              alpha: false // Disable alpha for better performance
+            }}
           >
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />
@@ -116,6 +139,12 @@ const ProjectCard = ({ project, index }) => {
               enablePan={false} // Disable panning for better performance
             />
           </Canvas>
+        ) : hasError ? (
+          <ErrorFallback />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <p className="text-white">Loading project...</p>
+          </div>
         )}
       </div>
     </div>
