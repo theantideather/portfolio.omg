@@ -11,11 +11,31 @@ export const navLinks = [
   },
   {
     id: 3,
-    name: 'Work',
+    name: 'Experience',
     href: '#work',
   },
   {
     id: 4,
+    name: 'Projects',
+    href: '#projects',
+  },
+  {
+    id: 5,
+    name: 'Skills',
+    href: '#skills',
+  },
+  {
+    id: 6,
+    name: 'Speaking',
+    href: '#speaking',
+  },
+  {
+    id: 7,
+    name: 'Links',
+    href: '#links',
+  },
+  {
+    id: 8,
     name: 'Contact',
     href: '#contact',
   },
@@ -24,45 +44,45 @@ export const navLinks = [
 export const clientReviews = [
   {
     id: 1,
-    name: 'Emily Johnson',
-    position: 'Marketing Director at GreenLeaf',
+    name: 'Jio World Centre',
+    position: 'World Health Conference',
     img: 'assets/review1.png',
     review:
-      'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
+      'Youngest speaker at Jio World Centre, discussing AI-driven healthcare innovations and the future of medical technology.',
   },
   {
     id: 2,
-    name: 'Mark Rogers',
-    position: 'Founder of TechGear Shop',
+    name: 'CoinDCX',
+    position: 'Web3 Events',
     img: 'assets/review2.png',
     review:
-      'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
+      'Featured speaker on Web3 and blockchain technology, sharing insights on decentralized healthcare solutions.',
   },
   {
     id: 3,
-    name: 'John Dohsas',
-    position: 'Project Manager at UrbanTech ',
+    name: 'Solana',
+    position: 'Hacker Houses',
     img: 'assets/review3.png',
     review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
+      'Led technical workshops on blockchain development and smart contract implementation for healthcare solutions.',
   },
   {
     id: 4,
-    name: 'Ether Smith',
-    position: 'CEO of BrightStar Enterprises',
+    name: 'Ethereum Foundation',
+    position: 'Road to Devcon',
     img: 'assets/review4.png',
     review:
-      'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
+      'Keynote speaker discussing the intersection of blockchain and healthcare, focusing on decentralized medical records.',
   },
 ];
 
 export const myProjects = [
   {
-    title: 'Podcastr - AI Podcast Platform',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    title: 'Orocare.live',
+    desc: 'Technical implementation of conversational AI for medical diagnosis with distributed computing architecture.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+      'Implemented first VR-based dental procedure simulation system, scaled to 2,600+ medical practitioners, and developed proprietary AI diagnostic algorithms.',
+    href: 'https://orocare.live',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -74,69 +94,32 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
+        name: 'AI',
         path: '/assets/react.svg',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
+        name: 'VR',
         path: 'assets/tailwindcss.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
+        name: 'Healthcare',
         path: '/assets/typescript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
+        name: 'Web3',
         path: '/assets/framer.png',
       },
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    title: 'CastleBlock',
+    desc: 'Technical education and development platform for Web3.',
     subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
-    logoStyle: {
-      backgroundColor: '#13202F',
-      border: '0.2px solid #17293E',
-      boxShadow: '0px 0px 60px 0px #2F6DB54D',
-    },
-    spotlight: '/assets/spotlight2.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-  {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
-    subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+      'Scaled developer network to 1,100+ across 9 regions and implemented 6 institutional partnerships.',
+    href: 'https://linktr.ee/castlexblock',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo3.png',
     logoStyle: {
@@ -150,32 +133,69 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
+        name: 'Web3',
         path: '/assets/react.svg',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
+        name: 'Education',
         path: 'assets/tailwindcss.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
+        name: 'Community',
         path: '/assets/typescript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
+        name: 'Blockchain',
         path: '/assets/framer.png',
       },
     ],
   },
   {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+    title: 'ResqAI.life',
+    desc: 'AI-powered emergency response protocol implementation.',
     subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+      'Developed real-time response algorithms, implemented ML-based training simulations, and deployed global emergency response network.',
+    href: 'https://resqai.life',
+    texture: '/textures/project/project2.mp4',
+    logo: '/assets/project-logo2.png',
+    logoStyle: {
+      backgroundColor: '#13202F',
+      border: '0.2px solid #17293E',
+      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'AI',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'ML',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'Healthcare',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Emergency',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'PathPulse.ai',
+    desc: 'Strategic advisor for an innovative road intelligence platform using AI and custom hardware to capture live road insights.',
+    subdesc:
+      'Advising on AI system development for 25+ road insights, supporting partnership development with major mapping platforms, and contributing to government collaboration initiatives.',
+    href: 'https://pathpulse.ai',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -187,59 +207,59 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
+        name: 'AI',
         path: '/assets/react.svg',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
+        name: 'Hardware',
         path: 'assets/tailwindcss.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
+        name: 'Mobility',
         path: '/assets/typescript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
+        name: 'Strategy',
         path: '/assets/framer.png',
       },
     ],
   },
   {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+    title: 'Dental VR Experience',
+    desc: 'World\'s first VR experience for dentistry and surgical simulation.',
     subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-    texture: '/textures/project/project5.mp4',
-    logo: '/assets/project-logo5.png',
+      'Pioneered immersive VR technology for dental education and surgical training, creating realistic interactive environments for practicing complex procedures in a risk-free setting.',
+    href: 'https://www.instagram.com/reel/C8IZaRtSCnC/',
+    texture: '/textures/project/project2.mp4',
+    logo: '/assets/project-logo2.png',
     logoStyle: {
-      backgroundColor: '#1C1A43',
-      border: '0.2px solid #252262',
-      boxShadow: '0px 0px 60px 0px #635BFF4D',
+      backgroundColor: '#1F3A8A',
+      border: '0.2px solid #2A4FBB',
+      boxShadow: '0px 0px 60px 0px #4B6FDB4D',
     },
-    spotlight: '/assets/spotlight5.png',
+    spotlight: '/assets/spotlight2.png',
     tags: [
       {
         id: 1,
-        name: 'React.js',
+        name: 'VR',
         path: '/assets/react.svg',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
+        name: 'Healthcare',
         path: 'assets/tailwindcss.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
+        name: 'Education',
         path: '/assets/typescript.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
+        name: '3D',
         path: '/assets/framer.png',
       },
     ],
@@ -260,29 +280,300 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: '/assets/framer.svg',
+    name: 'Orocare.live',
+    pos: 'Founder & CEO',
+    title: "Leading an AI Healthtech product studio focused on empowering doctors with conversational AI diagnosis. Built and scaled platform to over 2,600 doctors.",
+    icon: '/assets/orocare.svg',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: '/assets/figma.svg',
+    name: 'ResqAI.life',
+    pos: 'Co-founder',
+    title: "Pioneering AI-guided medical emergency response and training systems. Developed AI-powered emergency response protocols and comprehensive training simulations.",
+    icon: '/assets/resqai.svg',
     animation: 'clapping',
   },
   {
     id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: '/assets/notion.svg',
+    name: 'Callso',
+    pos: 'Strategy Lead & Advisor',
+    title: "First wallet-to-wallet voice communication protocol on blockchain. Won ETH India Hackathon 2022.",
+    icon: '/assets/callso.svg',
     animation: 'salute',
   },
+  {
+    id: 4,
+    name: 'PathPulse.ai',
+    pos: 'Strategic Advisor',
+    title: "Advising an innovative AI-powered road intelligence platform revolutionizing smart mobility. Supporting $924B market opportunity targeting.",
+    icon: '/assets/pathpulse.svg',
+    animation: 'victory',
+  },
+  {
+    id: 5,
+    name: 'CastleBlock',
+    pos: 'Founder',
+    title: "Built and scaled a Web3 community and educational platform. Grew community to 1,100+ developers across 9 cities.",
+    icon: '/assets/castleblock.svg',
+    animation: 'clapping',
+  },
+];
+
+export const speakingEvents = [
+  {
+    id: 1,
+    name: 'World Health Conference',
+    description: 'Youngest speaker at Jio World Centre, discussing AI-driven healthcare innovations and the future of medical technology.',
+  },
+  {
+    id: 2,
+    name: 'CoinDCX Events',
+    description: 'Featured speaker on Web3 and blockchain technology, sharing insights on decentralized healthcare solutions.',
+  },
+  {
+    id: 3,
+    name: 'Solana Hacker Houses',
+    description: 'Led technical workshops on blockchain development and smart contract implementation for healthcare.',
+  },
+  {
+    id: 4,
+    name: 'Road to Devcon',
+    description: 'Keynote speaker discussing the intersection of blockchain and healthcare, focusing on decentralized medical records.',
+  },
+  {
+    id: 5,
+    name: 'Zo NFT Day by GirlScript',
+    description: 'Expert panel speaker on NFT ecosystems and their potential applications in healthcare verification.',
+  },
+  {
+    id: 6,
+    name: 'Castle Block Events',
+    description: 'Community leader conducting Web3 education sessions and blockchain development workshops.',
+  },
+  {
+    id: 7,
+    name: '50+ Crypto Events',
+    description: 'Regular speaker at major blockchain conferences, focusing on healthcare applications and community building.',
+  },
+];
+
+export const skills = [
+  {
+    name: 'Web3 Development',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'Blockchain Technology',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'Vibe Coding with AI Tools',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'AI Integration',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'Three.js & 3D Elements',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'VR/AR Development',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'Smart Contracts',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'Healthcare Tech',
+    level: 5,
+    category: 'technical'
+  },
+  {
+    name: 'Firebase/Supabase',
+    level: 4,
+    category: 'technical'
+  },
+  {
+    name: 'Payment Gateways',
+    level: 4,
+    category: 'technical'
+  },
+  {
+    name: 'Leadership',
+    level: 5,
+    category: 'business'
+  },
+  {
+    name: 'Strategy & Planning',
+    level: 5,
+    category: 'business'
+  },
+  {
+    name: 'Project Management',
+    level: 4,
+    category: 'business'
+  },
+  {
+    name: 'Public Speaking',
+    level: 5,
+    category: 'personal'
+  },
+  {
+    name: 'Community Building',
+    level: 5,
+    category: 'personal'
+  },
+  {
+    name: 'Languages',
+    level: 5,
+    category: 'personal'
+  }
+];
+
+export const socialLinks = [
+  {
+    title: "GitHub",
+    icon: "github",
+    link: "https://github.com/theantideather",
+  },
+  {
+    title: "LinkedIn",
+    icon: "linkedin",
+    link: "https://linkedin.com/in/omargohar",
+    emoji: "💼"
+  },
+  {
+    title: "Twitter",
+    icon: "twitter",
+    link: "https://twitter.com/omargohar",
+  },
+  {
+    title: "Telegram",
+    icon: "telegram",
+    link: "https://t.me/theantideather",
+    emoji: "📱"
+  },
+  {
+    title: "Dev.to",
+    icon: "devto",
+    link: "https://dev.to/theantideather",
+    emoji: "👨‍💻"
+  },
+  {
+    title: "Medium",
+    icon: "medium",
+    link: "https://medium.com/@om.g",
+    emoji: "📝"
+  },
+  {
+    title: "Instagram",
+    icon: "instagram",
+    link: "https://instagram.com/om.g.dev",
+  }
+];
+
+export const ventureLinks = [
+  {
+    name: 'Orocare',
+    links: [
+      { name: 'Website', url: 'https://orocare.live', icon: 'globe' },
+      { name: 'Instagram', url: 'https://instagram.com/orocare.ai', icon: 'instagram' },
+    ]
+  },
+  {
+    name: 'ResqAI',
+    links: [
+      { name: 'Website', url: 'https://resqai.life', icon: 'globe' },
+    ]
+  },
+  {
+    name: 'CastleBlock',
+    links: [
+      { name: 'Main Website', url: 'https://linktr.ee/castlexblock', icon: 'globe' },
+      { name: 'Instagram', url: 'https://instagram.com/castlexblock', icon: 'instagram' },
+      { name: 'Main Community', url: 'https://chat.whatsapp.com/Fq191Sey9LIJkQCVfWOZcD', icon: 'message' },
+      { name: 'City Chapters', url: 'https://chat.whatsapp.com/IbLNIy5eNxY5FUNB3pLf5y', icon: 'message' },
+      { name: 'Trading Group', url: 'https://chat.whatsapp.com/HgLf514w0lJ93cyu0zHRRt', icon: 'message' },
+    ]
+  },
+  {
+    name: 'Other Projects',
+    links: [
+      { name: 'Callso', url: 'https://callso.app', icon: 'briefcase' },
+      { name: 'The Jalals NFT', url: 'https://thejalals.run', icon: 'briefcase' },
+    ]
+  }
+];
+
+export const contactInfo = [
+  { name: 'Email', url: 'mailto:omgurram14@gmail.com', icon: 'mail', value: 'omgurram14@gmail.com' },
+  { name: 'Telegram', url: 'https://t.me/theantideather', icon: 'message', value: '@theantideather' },
+  { name: 'Phone', url: 'tel:+919405659924', icon: 'phone', value: '+91 94056 59924' },
+];
+
+// Add a section for Twitter embeds/previews that the user will provide later
+export const twitterEmbeds = [
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1850646138354913408",
+    description: "Speaking at Jio World Centre on healthcare AI innovations and future medical technology"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1704227169281695854",
+    description: "Featured at NFT Day sharing insights on NFT ecosystems and healthcare verification applications"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1575092344529235969",
+    description: "Speaking at CoinDCX Events on Web3 and blockchain technology for decentralized healthcare solutions"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1601673327437049857",
+    description: "Leading CastleBlock Events with Web3 education sessions and blockchain development workshops"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1636068130404577280",
+    description: "Speaking at DY Patil University about blockchain technology and its applications"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1654549136560246784",
+    description: "Presenting at Zion event on innovative blockchain solutions"
+  },
+  {
+    tweetUrl: "https://x.com/joinzo/status/1813227896615354607",
+    description: "Featured speaker at Zo NFT Day discussing the future of digital assets"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1647516925717786624",
+    description: "Recognized by Forbes for contributions to blockchain and healthcare technology"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1842916428715852235",
+    description: "Speaking at Jio World Centre IDA about healthcare innovations"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1897305025262805200",
+    description: "Sharing my challenge of developing an AI app every day - demonstrating rapid innovation in healthcare AI"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1898533125464170699",
+    description: "Showcasing AI application development and healthcare technology integration"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1898863844291944958",
+    description: "Discussing the intersection of AI and healthcare in my daily development challenge"
+  },
+  {
+    tweetUrl: "https://x.com/omg14doteth/status/1899633612292813065",
+    description: "Demonstrating the latest in AI-powered healthcare applications from my development challenge"
+  }
 ];

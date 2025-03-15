@@ -7,10 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Build outputs
 dist
 dist-ssr
 *.local
+build
+/out/
 
 # Editor directories and files
 .vscode/*
@@ -23,5 +30,29 @@ dist-ssr
 *.sln
 *.sw?
 
-# env
+# Environment files
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Netlify
+.netlify/
+
+# Testing
+/coverage
+
+# Production build folders
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

@@ -1,0 +1,43 @@
+# Settings in the [build] context are global and applied to all contexts
+# unless otherwise overridden by specific context configurations
+[build]
+  # Directory to change to before starting a build
+  # This is the root of your project
+  base = "/"
+
+  # Directory that contains the deploy-ready HTML files and assets
+  # For Vite, this is the dist directory
+  publish = "dist"
+
+  # Default build command
+  command = "npm run build"
+
+# Redirects and headers
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers to return with all requests
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover
+  for = "/*"
+    [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Headers for cache optimization of assets
+[[headers]]
+  for = "/assets/*"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Headers for cache optimization of JS and CSS files
+[[headers]]
+  for = "/*.js"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable" 
