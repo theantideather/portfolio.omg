@@ -1,14 +1,18 @@
-import { useState, useEffect, Suspense } from 'react';
-import Hero from './sections/Hero.jsx';
-import About from './sections/About.jsx';
-import Footer from './sections/Footer.jsx';
-import Navbar from './sections/Navbar.jsx';
-import Contact from './sections/Contact.jsx';
-import Projects from './sections/Projects.jsx';
-import WorkExperience from './sections/Experience.jsx';
-import Skills from './sections/Skills.jsx';
-import Speaking from './sections/Speaking.jsx';
-import Links from './sections/Links.jsx';
+import { useState, useEffect, Suspense, lazy } from 'react';
+// Import the pre-configured GSAP
+import { gsap } from './utils/gsapSetup.js';
+
+// Lazy load all components to ensure proper initialization order
+const Hero = lazy(() => import('./sections/Hero.jsx'));
+const About = lazy(() => import('./sections/About.jsx'));
+const Footer = lazy(() => import('./sections/Footer.jsx'));
+const Navbar = lazy(() => import('./sections/Navbar.jsx'));
+const Contact = lazy(() => import('./sections/Contact.jsx'));
+const Projects = lazy(() => import('./sections/Projects.jsx'));
+const WorkExperience = lazy(() => import('./sections/Experience.jsx'));
+const Skills = lazy(() => import('./sections/Skills.jsx'));
+const Speaking = lazy(() => import('./sections/Speaking.jsx'));
+const Links = lazy(() => import('./sections/Links.jsx'));
 
 // Loading component
 const LoadingScreen = () => (
@@ -105,19 +109,45 @@ const ErrorFallback = ({ error }) => (
   </div>
 );
 
+// Simple header component to show even if other components fail
+const SimpleHeader = () => (
+  <header style={{ 
+    padding: '1rem', 
+    textAlign: 'center', 
+    color: 'white',
+    background: 'linear-gradient(to right, #0f0f0f, #121212)'
+  }}>
+    <h1>Om.G Portfolio</h1>
+  </header>
+);
+
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [componentsLoaded, setComponentsLoaded] = useState({
+    navbar: false,
+    hero: false,
+    about: false,
+    projects: false
+  });
+
+  // Log component loading status
+  useEffect(() => {
+    console.log('📊 Components loaded status:', componentsLoaded);
+  }, [componentsLoaded]);
 
   useEffect(() => {
+    console.log('🔄 App component mounted');
+    
     // Simulate checking that all resources are loaded
     const loadTimeout = setTimeout(() => {
+      console.log('⏱️ Loading timeout completed');
       setIsLoading(false);
     }, 2000);
 
     // Add error handling for the window
     const handleError = (event) => {
-      console.error('Global error caught:', event);
+      console.error('🚨 Global error caught in App component:', event);
       setError(new Error(event.message || 'Unknown error occurred'));
     };
 
@@ -126,32 +156,91 @@ const App = () => {
     return () => {
       clearTimeout(loadTimeout);
       window.removeEventListener('error', handleError);
+      console.log('♻️ App component cleanup');
     };
   }, []);
 
+  // Component to handle component loading status
+  const ComponentWithTracking = ({ name, children }) => {
+    useEffect(() => {
+      console.log(`✅ Component ${name} mounted`);
+      setComponentsLoaded(prev => ({ ...prev, [name.toLowerCase()]: true }));
+      
+      return () => {
+        console.log(`❌ Component ${name} unmounted`);
+        setComponentsLoaded(prev => ({ ...prev, [name.toLowerCase()]: false }));
+      };
+    }, []);
+    
+    return children;
+  };
+
   if (error) {
+    console.error('🛑 Rendering error state due to:', error);
     return <ErrorFallback error={error} />;
   }
 
   if (isLoading) {
+    console.log('⌛ Rendering loading screen');
     return <LoadingScreen />;
   }
 
+  console.log('🎨 Rendering main App UI');
   return (
-    <main className="max-w-7xl mx-auto relative">
-      <Suspense fallback={<LoadingScreen />}>
-        <Navbar />
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <WorkExperience />
-        <Speaking />
-        <Links />
-        <Contact />
-        <Footer />
-      </Suspense>
-    </main>
+    <>
+      {/* Always show a simple header even if components fail */}
+      <SimpleHeader />
+      
+      <main className="max-w-7xl mx-auto relative">
+        <Suspense fallback={<div>Loading Navbar...</div>}>
+          <ComponentWithTracking name="Navbar">
+            <Navbar />
+          </ComponentWithTracking>
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Hero Section...</div>}>
+          <ComponentWithTracking name="Hero">
+            <Hero />
+          </ComponentWithTracking>
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading About Section...</div>}>
+          <ComponentWithTracking name="About">
+            <About />
+          </ComponentWithTracking>
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Projects Section...</div>}>
+          <ComponentWithTracking name="Projects">
+            <Projects />
+          </ComponentWithTracking>
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Skills Section...</div>}>
+          <Skills />
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Experience Section...</div>}>
+          <WorkExperience />
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Speaking Section...</div>}>
+          <Speaking />
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Links Section...</div>}>
+          <Links />
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Contact Section...</div>}>
+          <Contact />
+        </Suspense>
+        
+        <Suspense fallback={<div>Loading Footer...</div>}>
+          <Footer />
+        </Suspense>
+      </main>
+    </>
   );
 };
 

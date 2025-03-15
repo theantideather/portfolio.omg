@@ -1,11 +1,39 @@
 import { useState, lazy, Suspense } from 'react';
 // Lazy load the Globe component
-const Globe = lazy(() => import('react-globe.gl'));
+const Globe = lazy(() => {
+  console.log('🌐 Lazy loading Globe component');
+  return import('react-globe.gl')
+    .then(module => {
+      console.log('✅ Globe component loaded successfully');
+      return module;
+    })
+    .catch(error => {
+      console.error('❌ Failed to load Globe component:', error);
+      // Return a placeholder component to avoid crashes
+      return { 
+        default: props => (
+          <div style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0,0,0,0.3)',
+            borderRadius: '8px',
+            color: 'white'
+          }}>
+            Globe visualization unavailable
+          </div>
+        )
+      };
+    });
+});
 
 import Button from '../components/Button.jsx';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const [globeError, setGlobeError] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText('omgurram14@gmail.com');
@@ -16,10 +44,22 @@ const About = () => {
     }, 2000);
   };
 
+  // Handle Globe errors
+  const handleGlobeError = (error) => {
+    console.error('Globe error:', error);
+    setGlobeError(true);
+  };
+
   // Fallback component for the Globe
   const GlobeFallback = () => (
     <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center bg-black-200">
       <p className="text-white">Loading globe...</p>
+    </div>
+  );
+
+  const GlobeErrorFallback = () => (
+    <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center bg-black-200">
+      <p className="text-white">Unable to load globe visualization</p>
     </div>
   );
 
